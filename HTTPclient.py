@@ -8,3 +8,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     request = f"""GET {URL} HTTP/1.1\r\nHost: localhost\r\n\r\n"""
     s.sendall(request.encode('utf-8'))
     print("Risposta:\n\n{}".format(s.recv(1024).decode('utf-8')))
+    while True:
+    	data = s.recv(1024).decode('utf-8')
+    	print(data)
