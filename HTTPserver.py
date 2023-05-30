@@ -116,3 +116,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         if child_pid == 0:
             serve_request(conn)
             sys.exit()
+        else:
+            conn.close()
